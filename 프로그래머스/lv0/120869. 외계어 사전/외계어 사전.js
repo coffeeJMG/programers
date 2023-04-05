@@ -1,6 +1,6 @@
 function solution(spell, dic) {
     let answer = 0;
-    let sumString ='';
+    let sumString ='';  
     for(i=0; i<spell.length; i++){
         sumString+=spell[i]
     }
