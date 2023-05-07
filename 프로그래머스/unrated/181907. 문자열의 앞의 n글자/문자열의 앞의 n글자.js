@@ -1,0 +1,7 @@
+function solution(my_string, n) {
+
+    
+    my_string = my_string.split('').slice(0,n).join('')
+    
+    return my_string;
+}
