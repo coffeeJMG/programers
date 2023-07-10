@@ -3,15 +3,15 @@ function solution(food) {
    
   
          for(i=1; i<food.length; i++){
-            if(food[i] %2 ===1){
-              answer+=String(i).repeat((food[i]-1)/2);
+            if(food[i] %2 ===1){                          // 준비된 물이 홀수라면
+              answer+=String(i).repeat((food[i]-1)/2);    //   갯수 -1/2 만큼 앞에 추가
           }else{
-              answer+=String(i).repeat(food[i]/2)
+              answer+=String(i).repeat(food[i]/2)         //짝수면 그대로
           }
         }
-        answer+='0'
+        answer+='0'                                       //중간 물
         
-        for(i=food.length-1; i>=0; i--){
+        for(i=food.length-1; i>=0; i--){                  // 앞과 뒤는 같으므로 반대 순으로 포문돌며 추가
           if(food[i] %2 ===1){
               answer+=String(i).repeat((food[i]-1)/2);
           }else{
