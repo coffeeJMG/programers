@@ -1,15 +1,23 @@
 function solution(array, commands) {
     var answer = [];
-    
-    for(var i=0; i<commands.length;i++){
-        var list = array.slice(commands[i][0]-1, commands[i]
-        							[1]).sort((a,b)=>{return a-b});
-        
-        answer.push(list[commands[i][2]-1]);
+    let result =[];
+    for(i=0; i<commands.length; i++){
+       answer.push(array.slice(commands[i][0]-1,commands[i][1]).sort((a,b)=>a-b))
+       
     }
+    
+    console.log(answer)
+    for(i=0; i<answer.length; i++){
+        let item = commands[i][2]-1
+            result.push(answer[i][item])
+     }
+   
+    
+   console.log(result)
+    return result;
 
-    return answer;
 }
-
-// commands[i][0] 번째부터 commands[i][1] 번째까지 배열을 자른다.
-// 오름차순으로 정렬 뒤 commands[i][2] 번째 값을 리턴한다.
+// commands 는 i,j,k를 담은 이중배열 
+// array[commands[i]] ~ array[commands[j]] 까지 자른다.
+// 위 배열을 정렬한다.
+// 3번째 숫자를 고른다.
