@@ -1,35 +1,15 @@
 function solution(nums) {
-    var answer = 0;
-    let pocketball =[];
-    let count =0;
-    
+    var answer = [];
+
     
     for(i=0; i<nums.length; i++){
-        
-        let item= nums[i];
-        
-        if(pocketball.length < nums.length/2){
-             for(j=0; j<pocketball.length; j++){
-            if(item===pocketball[j]){
-                count ++;
-            
-            }     
-        }
-        
-        if(count===0 ){
-            pocketball.push(item)
+        if(answer.length < nums.length/2){      // N/2 마리까지 포획 
+            if(!answer.includes(nums[i])){      // answer에 기존 번호의 포켓몬이 있는 지 확인 
+                answer.push(nums[i])            // 없다면 answer에 추가 
+            }
             
         }
-        count=0;
-       
-        }
-       
     }
     
-    answer = pocketball.length
-    return answer;
+    return answer.length;
 }
-
-
-//가지고 갈 수 있는 포켓몬은 N/2 마리
-//최대한 같은 종류는 피한다.
