@@ -1,22 +1,18 @@
 function solution(cards1, cards2, goal) {
-   
+    var answer = '';
     
-    for(let cards of goal){                 
+    for(i=0; i<goal.length; i++){
+        let item = goal[i];
         
-        if(cards1[0] ===cards){            // cards1[0] 번째의 값이 goal 의 n번째 값과 같다면
-          cards1.shift()                   // cards1[0] 지우기
-        
-        }else if(cards2[0] ===cards){      // cards2[0] 번째의 값이 goal 의 n번째 값과 같다면
-          cards2.shift()                   // cards2[0] 지우기
+        if(item === cards1[0]){
+            cards1.shift();
+        }else if(item ===cards2[0]){
+            cards2.shift();
         }else{
-            return "No"
+            answer+='No'
+            return answer
         }
-    } 
-    
-    return "Yes";
+    }
+    answer +='Yes'
+    return answer;
 }
-
-
-
-
-
