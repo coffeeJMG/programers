@@ -1,14 +1,24 @@
 function solution(code) {
-    let mode = 0
-    return [...code].reduce((acc, cur, idx) => {
-        if(mode) {
-            if(cur !== '1' && idx%2 === 1)  return acc+cur
-            if(cur === '1') mode = 0
-        } else {
-            if(cur !== '1' && idx%2 === 0)  return acc+cur
-            if(cur === '1') mode = 1
-        }
+    var answer = '';
+    let mode = 0;
+    
+    for(i=0; i<code.length; i++){
+        let item = code[i]
+        
+        if(item ==="1"){
+            mode ===0 ?  mode=1  : mode =0
             
-        return acc
-    }, "") || "EMPTY"
+         }
+        
+        if(mode ===0 && item !=="1" ){
+            if(i %2 ===0){
+                answer +=item
+            }
+        }else if(mode ===1 && item !=="1" ){
+            if(i%2 ===1 ){
+                answer+=item
+            }
+        }
+     }
+    return answer || "EMPTY"
 }
